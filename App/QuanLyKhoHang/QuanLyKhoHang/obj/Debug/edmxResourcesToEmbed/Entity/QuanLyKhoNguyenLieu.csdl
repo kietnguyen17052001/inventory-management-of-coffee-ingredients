@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QuanLyKhoNguyenLieuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BANGKIEMKE">
+    <Key>
+      <PropertyRef Name="MAKIEMKE" />
+    </Key>
+    <Property Name="MAKIEMKE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MANGUYENLIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LUONGTONKHO" Type="Int32" />
+    <Property Name="LUONGTHIEUHUT" Type="Int32" />
+    <Property Name="KIEMTHUCONG" Type="Int32" />
+    <NavigationProperty Name="NGUYENLIEU" Relationship="Self.FK__BANGKIEMK__KIEMT__1ED998B2" FromRole="BANGKIEMKE" ToRole="NGUYENLIEU" />
+  </EntityType>
+  <EntityType Name="CHITIETPHIEUNHAP">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+      <PropertyRef Name="MANGUYENLIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MANGUYENLIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <NavigationProperty Name="NGUYENLIEU" Relationship="Self.FK__CHITIETPH__MANGU__164452B1" FromRole="CHITIETPHIEUNHAP" ToRole="NGUYENLIEU" />
+    <NavigationProperty Name="PHIEUNHAPKHO_XUATKHO" Relationship="Self.FK__CHITIETPH__MAPHI__15502E78" FromRole="CHITIETPHIEUNHAP" ToRole="PHIEUNHAPKHO_XUATKHO" />
+  </EntityType>
+  <EntityType Name="CHITIETPHIEUXUAT">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+      <PropertyRef Name="MANGUYENLIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MANGUYENLIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SOLUONG" Type="Int32" />
+    <NavigationProperty Name="NGUYENLIEU" Relationship="Self.FK__CHITIETPH__MANGU__1A14E395" FromRole="CHITIETPHIEUXUAT" ToRole="NGUYENLIEU" />
+    <NavigationProperty Name="PHIEUNHAPKHO_XUATKHO" Relationship="Self.FK__CHITIETPH__MAPHI__1920BF5C" FromRole="CHITIETPHIEUXUAT" ToRole="PHIEUNHAPKHO_XUATKHO" />
+  </EntityType>
+  <EntityType Name="KHO">
+    <Key>
+      <PropertyRef Name="MAKHO" />
+    </Key>
+    <Property Name="MAKHO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENKHO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="NGUYENLIEUx" Relationship="Self.FK__NGUYENLIE__MAKHO__0CBAE877" FromRole="KHO" ToRole="NGUYENLIEU" />
+  </EntityType>
+  <EntityType Name="NGUOIDUNG">
+    <Key>
+      <PropertyRef Name="MANHANVIEN" />
+    </Key>
+    <Property Name="MANHANVIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENNHANVIEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAIKHOAN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MATKHAU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="PHIEUNHAPKHO_XUATKHO" Relationship="Self.FK__PHIEUNHAP__LOAID__1273C1CD" FromRole="NGUOIDUNG" ToRole="PHIEUNHAPKHO_XUATKHO" />
+  </EntityType>
+  <EntityType Name="NGUYENLIEU">
+    <Key>
+      <PropertyRef Name="MANGUYENLIEU" />
+    </Key>
+    <Property Name="MANGUYENLIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENNGUYENLIEU" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MANHACUNGCAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DONVITINH" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MAKHO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="BANGKIEMKEs" Relationship="Self.FK__BANGKIEMK__KIEMT__1ED998B2" FromRole="NGUYENLIEU" ToRole="BANGKIEMKE" />
+    <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.FK__CHITIETPH__MANGU__164452B1" FromRole="NGUYENLIEU" ToRole="CHITIETPHIEUNHAP" />
+    <NavigationProperty Name="CHITIETPHIEUXUATs" Relationship="Self.FK__CHITIETPH__MANGU__1A14E395" FromRole="NGUYENLIEU" ToRole="CHITIETPHIEUXUAT" />
+    <NavigationProperty Name="KHO" Relationship="Self.FK__NGUYENLIE__MAKHO__0CBAE877" FromRole="NGUYENLIEU" ToRole="KHO" />
+    <NavigationProperty Name="NHACUNGCAP" Relationship="Self.FK__NGUYENLIE__MANHA__0DAF0CB0" FromRole="NGUYENLIEU" ToRole="NHACUNGCAP" />
+  </EntityType>
+  <EntityType Name="NHACUNGCAP">
+    <Key>
+      <PropertyRef Name="MANHACUNGCAP" />
+    </Key>
+    <Property Name="MANHACUNGCAP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TENNHACUNGCAP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIACHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SODIENTHOAI" Type="String" MaxLength="11" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="NGUYENLIEUx" Relationship="Self.FK__NGUYENLIE__MANHA__0DAF0CB0" FromRole="NHACUNGCAP" ToRole="NGUYENLIEU" />
+  </EntityType>
+  <EntityType Name="PHIEUNHAPKHO_XUATKHO">
+    <Key>
+      <PropertyRef Name="MAPHIEU" />
+    </Key>
+    <Property Name="MAPHIEU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NGAYLAP" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="MANHANVIEN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LOAIDON" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CHITIETPHIEUNHAPs" Relationship="Self.FK__CHITIETPH__MAPHI__15502E78" FromRole="PHIEUNHAPKHO_XUATKHO" ToRole="CHITIETPHIEUNHAP" />
+    <NavigationProperty Name="CHITIETPHIEUXUATs" Relationship="Self.FK__CHITIETPH__MAPHI__1920BF5C" FromRole="PHIEUNHAPKHO_XUATKHO" ToRole="CHITIETPHIEUXUAT" />
+    <NavigationProperty Name="NGUOIDUNG" Relationship="Self.FK__PHIEUNHAP__LOAID__1273C1CD" FromRole="PHIEUNHAPKHO_XUATKHO" ToRole="NGUOIDUNG" />
+  </EntityType>
+  <Association Name="FK__BANGKIEMK__KIEMT__1ED998B2">
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+    <End Role="BANGKIEMKE" Type="Self.BANGKIEMKE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUYENLIEU">
+        <PropertyRef Name="MANGUYENLIEU" />
+      </Principal>
+      <Dependent Role="BANGKIEMKE">
+        <PropertyRef Name="MANGUYENLIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETPH__MANGU__164452B1">
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+    <End Role="CHITIETPHIEUNHAP" Type="Self.CHITIETPHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUYENLIEU">
+        <PropertyRef Name="MANGUYENLIEU" />
+      </Principal>
+      <Dependent Role="CHITIETPHIEUNHAP">
+        <PropertyRef Name="MANGUYENLIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETPH__MAPHI__15502E78">
+    <End Role="PHIEUNHAPKHO_XUATKHO" Type="Self.PHIEUNHAPKHO_XUATKHO" Multiplicity="1" />
+    <End Role="CHITIETPHIEUNHAP" Type="Self.CHITIETPHIEUNHAP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUNHAPKHO_XUATKHO">
+        <PropertyRef Name="MAPHIEU" />
+      </Principal>
+      <Dependent Role="CHITIETPHIEUNHAP">
+        <PropertyRef Name="MAPHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETPH__MANGU__1A14E395">
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="1" />
+    <End Role="CHITIETPHIEUXUAT" Type="Self.CHITIETPHIEUXUAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUYENLIEU">
+        <PropertyRef Name="MANGUYENLIEU" />
+      </Principal>
+      <Dependent Role="CHITIETPHIEUXUAT">
+        <PropertyRef Name="MANGUYENLIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CHITIETPH__MAPHI__1920BF5C">
+    <End Role="PHIEUNHAPKHO_XUATKHO" Type="Self.PHIEUNHAPKHO_XUATKHO" Multiplicity="1" />
+    <End Role="CHITIETPHIEUXUAT" Type="Self.CHITIETPHIEUXUAT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHIEUNHAPKHO_XUATKHO">
+        <PropertyRef Name="MAPHIEU" />
+      </Principal>
+      <Dependent Role="CHITIETPHIEUXUAT">
+        <PropertyRef Name="MAPHIEU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NGUYENLIE__MAKHO__0CBAE877">
+    <End Role="KHO" Type="Self.KHO" Multiplicity="1" />
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHO">
+        <PropertyRef Name="MAKHO" />
+      </Principal>
+      <Dependent Role="NGUYENLIEU">
+        <PropertyRef Name="MAKHO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PHIEUNHAP__LOAID__1273C1CD">
+    <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="1" />
+    <End Role="PHIEUNHAPKHO_XUATKHO" Type="Self.PHIEUNHAPKHO_XUATKHO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NGUOIDUNG">
+        <PropertyRef Name="MANHANVIEN" />
+      </Principal>
+      <Dependent Role="PHIEUNHAPKHO_XUATKHO">
+        <PropertyRef Name="MANHANVIEN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__NGUYENLIE__MANHA__0DAF0CB0">
+    <End Role="NHACUNGCAP" Type="Self.NHACUNGCAP" Multiplicity="1" />
+    <End Role="NGUYENLIEU" Type="Self.NGUYENLIEU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NHACUNGCAP">
+        <PropertyRef Name="MANHACUNGCAP" />
+      </Principal>
+      <Dependent Role="NGUYENLIEU">
+        <PropertyRef Name="MANHACUNGCAP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Team06Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BANGKIEMKEs" EntityType="Self.BANGKIEMKE" />
+    <EntitySet Name="CHITIETPHIEUNHAPs" EntityType="Self.CHITIETPHIEUNHAP" />
+    <EntitySet Name="CHITIETPHIEUXUATs" EntityType="Self.CHITIETPHIEUXUAT" />
+    <EntitySet Name="KHOes" EntityType="Self.KHO" />
+    <EntitySet Name="NGUOIDUNGs" EntityType="Self.NGUOIDUNG" />
+    <EntitySet Name="NGUYENLIEUx" EntityType="Self.NGUYENLIEU" />
+    <EntitySet Name="NHACUNGCAPs" EntityType="Self.NHACUNGCAP" />
+    <EntitySet Name="PHIEUNHAPKHO_XUATKHO" EntityType="Self.PHIEUNHAPKHO_XUATKHO" />
+    <AssociationSet Name="FK__BANGKIEMK__KIEMT__1ED998B2" Association="Self.FK__BANGKIEMK__KIEMT__1ED998B2">
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+      <End Role="BANGKIEMKE" EntitySet="BANGKIEMKEs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETPH__MANGU__164452B1" Association="Self.FK__CHITIETPH__MANGU__164452B1">
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+      <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETPH__MAPHI__15502E78" Association="Self.FK__CHITIETPH__MAPHI__15502E78">
+      <End Role="PHIEUNHAPKHO_XUATKHO" EntitySet="PHIEUNHAPKHO_XUATKHO" />
+      <End Role="CHITIETPHIEUNHAP" EntitySet="CHITIETPHIEUNHAPs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETPH__MANGU__1A14E395" Association="Self.FK__CHITIETPH__MANGU__1A14E395">
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+      <End Role="CHITIETPHIEUXUAT" EntitySet="CHITIETPHIEUXUATs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CHITIETPH__MAPHI__1920BF5C" Association="Self.FK__CHITIETPH__MAPHI__1920BF5C">
+      <End Role="PHIEUNHAPKHO_XUATKHO" EntitySet="PHIEUNHAPKHO_XUATKHO" />
+      <End Role="CHITIETPHIEUXUAT" EntitySet="CHITIETPHIEUXUATs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NGUYENLIE__MAKHO__0CBAE877" Association="Self.FK__NGUYENLIE__MAKHO__0CBAE877">
+      <End Role="KHO" EntitySet="KHOes" />
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PHIEUNHAP__LOAID__1273C1CD" Association="Self.FK__PHIEUNHAP__LOAID__1273C1CD">
+      <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+      <End Role="PHIEUNHAPKHO_XUATKHO" EntitySet="PHIEUNHAPKHO_XUATKHO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__NGUYENLIE__MANHA__0DAF0CB0" Association="Self.FK__NGUYENLIE__MANHA__0DAF0CB0">
+      <End Role="NHACUNGCAP" EntitySet="NHACUNGCAPs" />
+      <End Role="NGUYENLIEU" EntitySet="NGUYENLIEUx" />
+    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="QuanLyKhoNguyenLieuModel.sysdiagram" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

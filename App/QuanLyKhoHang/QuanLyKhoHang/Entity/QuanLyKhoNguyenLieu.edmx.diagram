@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="edf44559817c409ebe9e88ab8b849efb" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.BANGKIEMKE" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.CHITIETPHIEUNHAP" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.CHITIETPHIEUXUAT" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.KHO" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.NGUOIDUNG" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.NGUYENLIEU" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.PHIEUNHAPKHO_XUATKHO" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__BANGKIEMK__KIEMT__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__CHITIETPH__MANGU__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__CHITIETPH__MAPHI__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__CHITIETPH__MANGU__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__CHITIETPH__MAPHI__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__NGUYENLIE__MAKHO__0CBAE877" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__PHIEUNHAP__LOAID__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyKhoNguyenLieuModel.FK__NGUYENLIE__MANHA__0DAF0CB0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QuanLyKhoNguyenLieuModel.sysdiagram" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

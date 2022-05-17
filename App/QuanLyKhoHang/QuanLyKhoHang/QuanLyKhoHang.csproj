@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EA94B236-5DAC-4B2F-B278-5AA44A3FB0F8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyKhoHang</RootNamespace>
+    <AssemblyName>QuanLyKhoHang</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BussinessLogicLayer\BLLayer_BangKiemKe.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_DanhSachPhieuNhapXuat.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_Kho.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_NguyenLieu.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_NhaCungCap.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_PhieuNhapXuat.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_TaiKhoan.cs" />
+    <Compile Include="BussinessLogicLayer\BLLayer_ThongKe.cs" />
+    <Compile Include="Entity\BANGKIEMKE.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CHITIETPHIEUNHAP.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\CHITIETPHIEUXUAT.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\KHO.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NGUOIDUNG.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NGUYENLIEU.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\NHACUNGCAP.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\PHIEUNHAPKHO_XUATKHO.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLyKhoNguyenLieu.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLyKhoNguyenLieu.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLyKhoNguyenLieu.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\QLyKhoNguyenLieu.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLyKhoNguyenLieu.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\sysdiagram.cs">
+      <DependentUpon>QLyKhoNguyenLieu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\ComboboxItem.cs" />
+    <Compile Include="View\BangKiemKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BangKiemKe.Designer.cs">
+      <DependentUpon>BangKiemKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\DangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DanhSachPhieuNhap-Xuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\DanhSachPhieuNhap-Xuat.Designer.cs">
+      <DependentUpon>DanhSachPhieuNhap-Xuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\KhoNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KhoNguyenLieu.Designer.cs">
+      <DependentUpon>KhoNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NguyenLieu.Designer.cs">
+      <DependentUpon>NguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\NhaCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\NhaCungCap.Designer.cs">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\QuanLyKhoNguyenLieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\QuanLyKhoNguyenLieu.Designer.cs">
+      <DependentUpon>QuanLyKhoNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TaiKhoan.Designer.cs">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\TaoPhieuNhap-Xuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\TaoPhieuNhap-Xuat.Designer.cs">
+      <DependentUpon>TaoPhieuNhap-Xuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ThongKe.Designer.cs">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\BangKiemKe.resx">
+      <DependentUpon>BangKiemKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DangNhap.resx">
+      <DependentUpon>DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\DanhSachPhieuNhap-Xuat.resx">
+      <DependentUpon>DanhSachPhieuNhap-Xuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KhoNguyenLieu.resx">
+      <DependentUpon>KhoNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NguyenLieu.resx">
+      <DependentUpon>NguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\NhaCungCap.resx">
+      <DependentUpon>NhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\QuanLyKhoNguyenLieu.resx">
+      <DependentUpon>QuanLyKhoNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaiKhoan.resx">
+      <DependentUpon>TaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\TaoPhieuNhap-Xuat.resx">
+      <DependentUpon>TaoPhieuNhap-Xuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ThongKe.resx">
+      <DependentUpon>ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Entity\QLyKhoNguyenLieu.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>QLyKhoNguyenLieu.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entity\QLyKhoNguyenLieu.edmx.diagram">
+      <DependentUpon>QLyKhoNguyenLieu.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImgandIcon\btnGiamSoLuong.png" />
+    <None Include="ImgandIcon\btnThemSoLuong.png" />
+    <None Include="ImgandIcon\btnXuatExcel.png" />
+    <None Include="ImgandIcon\btnXoa.png" />
+    <None Include="ImgandIcon\btnLuu.png" />
+    <None Include="ImgandIcon\btnSua.png" />
+    <None Include="ImgandIcon\buttonThem.png" />
+    <None Include="ImgandIcon\DanhSachHoaDon.png" />
+    <None Include="ImgandIcon\Baocao.png" />
+    <None Include="ImgandIcon\HoaDon.png" />
+    <None Include="ImgandIcon\TaiKhoan.png" />
+    <None Include="ImgandIcon\NguyenLieu.png" />
+    <None Include="ImgandIcon\Kho2.png" />
+    <None Include="ImgandIcon\Kho.png" />
+    <None Include="ImgandIcon\backgroundQuanlyKho.jfif" />
+    <None Include="ImgandIcon\cancel.png" />
+    <None Include="ImgandIcon\keyLogin.png" />
+    <None Include="ImgandIcon\backgroundLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="ImgandIcon\btnQuayLai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImgandIcon\btnDangXuat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImgandIcon\backgroundQuanLyKhoNguyenLieu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImgandIcon\backgroundLogin.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ImgandIcon\phieu.png" />
+    <None Include="ImgandIcon\xem.png" />
+    <None Include="ImgandIcon\xuat.png" />
+    <None Include="ImgandIcon\nhap.png" />
+    <None Include="ImgandIcon\tonKhopng.png" />
+    <None Include="ImgandIcon\soLuong.png" />
+    <None Include="ImgandIcon\btnKiemKe.png" />
+    <None Include="ImgandIcon\btnTimKiem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entity\QLyKhoNguyenLieu.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLyKhoNguyenLieu.edmx</DependentUpon>
+      <LastGenOutput>QLyKhoNguyenLieu.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\QLyKhoNguyenLieu.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLyKhoNguyenLieu.edmx</DependentUpon>
+      <LastGenOutput>QLyKhoNguyenLieu.cs</LastGenOutput>
+    </Content>
+    <None Include="ImgandIcon\btnHuyBoChucNang.png" />
+    <None Include="ImgandIcon\btnThoat.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

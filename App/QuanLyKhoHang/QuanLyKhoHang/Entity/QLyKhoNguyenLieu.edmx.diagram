@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="500374a29a1c4722878e71150dea5d82" Name="Diagram1">
+        <EntityTypeShape EntityType="Team06Model.BANGKIEMKE" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.CHITIETPHIEUNHAP" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.CHITIETPHIEUXUAT" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.KHO" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.NGUOIDUNG" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.NGUYENLIEU" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.PHIEUNHAPKHO_XUATKHO" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Team06Model.sysdiagram" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Team06Model.FK__BANGKIEMK__KIEMT__1ED998B2" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__CHITIETPH__MANGU__164452B1" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__CHITIETPH__MAPHI__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__CHITIETPH__MANGU__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__CHITIETPH__MAPHI__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__NGUYENLIE__MAKHO__0CBAE877" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__PHIEUNHAP__LOAID__1273C1CD" ManuallyRouted="false" />
+        <AssociationConnector Association="Team06Model.FK__NGUYENLIE__MANHA__0DAF0CB0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
